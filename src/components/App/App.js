@@ -16,17 +16,21 @@ class App extends Component {
 
     const countryName = e.target.elements.country.value;
     
-    const url = `https://api.openaq.org/v1/cities?country=${countryName}&order_by=count&sort=desc&limit=10`
+    const url1 = 'https://api.openaq.org/v1/countries'
 
-    axios.get(url)
-    .then( response => {
+    axios
+    .get(url1)
+    .then(response => {
+      const country = response.data.results.find(el => el.name === countryName);
+      return axios.get(`https://api.openaq.org/v1/cities?country=${country.code}&order_by=count&sort=desc&limit=10`)
+    })
+    .then(response => {
       console.log(response.data.results)
     })
-    .catch(error => {
+    .catch(error => { 
       console.log(error)
     })
   }
-
   render () {
     return (
       <div className="App">
