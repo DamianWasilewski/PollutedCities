@@ -14,7 +14,7 @@ class App extends Component {
   getCities = (e) => {
     e.preventDefault();
 
-    const countryName = e.target.elements.country.value;
+    const countryName = e.target.elements.country.value.charAt(0).toUpperCase() + e.target.elements.country.value.slice(1);
     
     const url1 = 'https://api.openaq.org/v1/countries'
 
