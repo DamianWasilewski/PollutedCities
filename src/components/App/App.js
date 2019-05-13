@@ -16,10 +16,10 @@ class App extends Component {
 
     const countryName = e.target.elements.country.value.charAt(0).toUpperCase() + e.target.elements.country.value.slice(1);
     
-    const url1 = 'https://api.openaq.org/v1/countries'
+    const url = 'https://api.openaq.org/v1/countries'
 
     axios
-    .get(url1)
+    .get(url)
     .then(response => {
       const country = response.data.results.find(el => el.name === countryName);
       return axios.get(`https://api.openaq.org/v1/cities?country=${country.code}&order_by=count&sort=desc&limit=10`)
@@ -34,7 +34,7 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <CitySearchForm getCities = {this.getCities}/>
+        <CitySearchForm getCities={this.getCities}/>
       </div>
     );
   }

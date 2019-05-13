@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 
 class CitySearchForm extends Component {
+  constructor(props) {
+    super(props);
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputRef.current.value = localStorage.getItem('inputRef');
+  }
+
+  validate = () => {
+    const allowedCountries = new RegExp(/spain|germany|poland|france/, 'i');
+    this.setState({ disabled: !allowedCountries.test(this.inputRef.current.value)});
+    localStorage.setItem('inputRef', this.inputRef.current.value);
+  }
+  
   state = {
-    countryName: '',
     disabled: true
   }
 
-  changeHandler(e) {
-    this.setState({ countryName: e.target.value}, () => {
-      if(this.state.countryName === 'Spain') {
-        this.setState((prevState) => {
-          return {disabled: !prevState.disabled}
-        });
-      }
-    })
-  }
-  
-
   render () {
-    let disabled = this.state.disabled
     return (
       <div>
         <form onSubmit={this.props.getCities}>
-          <input type="text" name="country" placeholder="Country" value={this.state.countryName} onChange={this.changeHandler.bind(this)}/>
-          <input type="submit" disabled = {disabled} value="Submit"/>
+          <input type="text" name="country" placeholder="Country" ref={this.inputRef} onChange={this.validate}/>
+          <input type="submit" disabled = {this.state.disabled} value="Submit"/>
         </form>
       </div>
     )
