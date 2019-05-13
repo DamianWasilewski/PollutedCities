@@ -7,7 +7,12 @@ class CitySearchForm extends Component {
 
   render () {
     return (
-      <div></div>
+      <div>
+        <form onSubmit={this.props.getCities}>
+          <input type="text" name="country" placeholder="Country"/>
+          <input type="submit" value="Submit"/>
+        </form>
+      </div>
     )
   }
 }
