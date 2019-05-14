@@ -26,6 +26,7 @@ class CitySearchForm extends Component {
         <form onSubmit={this.props.getCities}>
           <input type="text" name="country" placeholder="Country" ref={this.inputRef} onChange={this.validate}/>
           <input type="submit" disabled = {this.state.disabled} value="Submit"/>
+          <button onClick={this.props.getInformation}></button>
         </form>
       </div>
     )
