@@ -1,0 +1,40 @@
+.form {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: rgba(0,0,0,.73);
+}
+
+.inputs-wrapper {
+  border: 1px solid grey;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.10);
+}
+
+.form input {
+  width: 100%;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: rgba(0,0,0,.73);
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.form ul::before {
+  content: '';
+}
+
+.form li {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.form li:hover {
+  text-decoration: underline;
+  background-color: rgba(128, 128, 128, 0.20);
+}

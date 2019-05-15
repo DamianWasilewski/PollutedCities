@@ -1,32 +1,62 @@
 import React, { Component } from 'react';
 
+import './CitySearchForm.css';
+
 class CitySearchForm extends Component {
   constructor(props) {
     super(props);
-    this.inputRef = React.createRef();
+    this.state = {
+      suggestions: [],
+      text: '',
+    };
   }
 
   componentDidMount() {
-    this.inputRef.current.value = localStorage.getItem('inputRef');
+    const bagno = localStorage.getItem('inputValue');
+    this.setState(() => ({text: bagno}))
   }
 
-  validate = () => {
-    const allowedCountries = new RegExp(/spain|germany|poland|france/, 'i');
-    this.setState({ disabled: !allowedCountries.test(this.inputRef.current.value)});
-    localStorage.setItem('inputRef', this.inputRef.current.value);
+  onTextChange = (e) => {
+    const { countries } = this.props;
+    const value = e.target.value;
+    localStorage.setItem('inputValue', value);
+    let suggestions = [];
+    if (value.length > 0) {
+      const regex = new RegExp(`^${value}`, 'i');
+      suggestions = countries.sort().filter(country => regex.test(country));
+    } 
+    this.setState(() => ({ suggestions, text: value }));
   }
-  
-  state = {
-    disabled: true
+
+  suggestionSelected (value) {
+    this.setState(() => ({
+      text: value,
+      suggestions: []
+    }))
+  }
+
+  renderSuggestions() {
+    const { suggestions } = this.state;
+    if (suggestions.length === 0) {
+      return null;
+    }
+    return (
+      <ul>
+        {suggestions.map((suggestion) => <li key={suggestion} onClick={() => this.suggestionSelected(suggestion)}>{suggestion}</li>)}
+      </ul>
+    );
   }
 
   render () {
+    const { text } = this.state;
     return (
-      <div>
+      <div className="form">
         <form onSubmit={this.props.getCities}>
-          <input type="text" name="country" placeholder="Country" ref={this.inputRef} onChange={this.validate}/>
-          <input type="submit" disabled = {this.state.disabled} value="Submit"/>
-          <button onClick={this.props.getInformation}></button>
+          <div className="inputs-wrapper">
+            <input autoComplete="off" type="text" name="country" placeholder="Country" value={text} onChange={this.onTextChange}/>
+            {this.renderSuggestions()}
+          </div>
+          <input className="babka" type="submit" value="Submit"/>
         </form>
       </div>
     )
