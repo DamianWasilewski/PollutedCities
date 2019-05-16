@@ -8,6 +8,7 @@
 .inputs-wrapper {
   border: 1px solid grey;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.10);
+  position: relative;
 }
 
 .form input {
@@ -22,7 +23,13 @@
 
 .form ul {
   list-style-type: none;
+  border: 1px solid grey;
   text-align: left;
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
 }
 
 .form ul::before {
@@ -32,9 +39,10 @@
 .form li {
   padding: 10px 5px;
   cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(212, 212, 212);
 }
 
 .form li:hover {
-  text-decoration: underline;
-  background-color: rgba(128, 128, 128, 0.20);
+  background-color: rgb(128, 128, 128);
 }
