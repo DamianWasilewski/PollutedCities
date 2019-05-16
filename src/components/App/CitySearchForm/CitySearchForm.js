@@ -56,6 +56,8 @@ class CitySearchForm extends Component {
             <input autoComplete="off" type="text" name="country" placeholder="Country" value={text} onChange={this.onTextChange}/>
             {this.renderSuggestions()}
           </div>
+          {this.props.errors}
+          {this.props.localError}
           <input type="submit" value="Submit"/>
         </form>
       </div>
