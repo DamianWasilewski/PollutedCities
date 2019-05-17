@@ -1,11 +1,30 @@
+.component-wrapper {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.page-info h1, p {
+  color: rgb(27, 115, 174);
+}
+
 .form {
-  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   color: rgba(0,0,0,.73);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
 }
 
 .inputs-wrapper {
+  margin-top: 40px;
+  width: 200px;
   border: 1px solid grey;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.10);
   position: relative;
@@ -19,6 +38,23 @@
   color: rgba(0,0,0,.73);
   box-sizing: border-box;
   outline: none;
+}
+
+.form input[type="submit"] {
+  width: 125px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  background-color: rgb(27, 115, 174);
+  color: white;
+  font-weight: bold;
+  transition: 0.75s;
+}
+
+.form input[type="submit"]:hover {
+  background-color: rgb(8, 108, 138);
+  transition: 0.75s;
 }
 
 .form ul {

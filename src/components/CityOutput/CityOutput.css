@@ -1,0 +1,63 @@
+.output-record {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  background: rgba(27, 115, 174, .1);
+  border-radius: 10px;
+}
+
+.output-record__row-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(55, 146, 62);
+}
+
+.output-record__city {
+  margin-left: 5px;
+}
+
+.output-record__button {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  margin-right: 15px;
+  bottom: 2px;
+}
+
+.output-record__button button{
+  background: none;
+  cursor: pointer;
+  border: 0px;
+  color: rgb(55, 146, 62);
+  transition: 0.5s;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.output-record__button button:hover{
+  color: rgb(8, 108, 138);
+  transition: 0.5s;
+}
+
+.description {
+  transition: opacity 1s ease-out;
+  opacity: 0; 
+  height: 0;
+  overflow-y: scroll;
+  margin-top: 0px;
+  max-height: 200px;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+.description.open {
+  display: block;
+  opacity: 1;
+  height: auto;
+}

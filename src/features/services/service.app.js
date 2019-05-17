@@ -5,12 +5,12 @@ class AppService {
         return axios.get('https://api.openaq.org/v1/countries')
     }
 
-    getCitis(code) {
+    getCities(code) {
         return axios.get(`https://api.openaq.org/v1/cities?country=${code}&order_by=count&sort=desc&limit=10`)
     }
 
-    getDescriptions(descriptions) {
-        return axios.get(`https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&explaintext&format=json&category=city&redirects&origin=*&titles=${descriptions.join("|")}`)
+    getDescriptions(name) {
+        return axios.get(`https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&explaintext&format=json&category=city&redirects&origin=*&titles=${name}`)
     }
 }
 

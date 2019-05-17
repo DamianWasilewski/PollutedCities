@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './ErrorMessage.css'
+
 const errorMessage = (props) => (
   <div className="errorMessage">
-  <span className="error">{props.error}</span>
+    <p>{props.error}</p>
   </div>
 );
 
