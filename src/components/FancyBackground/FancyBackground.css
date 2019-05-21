@@ -1,0 +1,12 @@
+.FancyBackground {
+  background-image: linear-gradient(to right, #055ada, #0087dc, #00a0b1, #54b18b, #adbb8d);
+  color: white;
+  padding: 2rem 0 4rem 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.FancyBackground p {
+  color: white;
+  padding: 0 1rem;
+}

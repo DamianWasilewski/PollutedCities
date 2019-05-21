@@ -15,7 +15,7 @@
   font-size: 1.2rem;
   justify-content: space-between;
   align-items: center;
-  color: rgb(55, 146, 62);
+  color: rgb(8, 108, 138);
 }
 
 .output-record__city {
@@ -27,14 +27,13 @@
   height: 1.2rem;
   position: relative;
   margin-right: 15px;
-  bottom: 2px;
 }
 
 .output-record__button button{
   background: none;
   cursor: pointer;
   border: 0px;
-  color: rgb(55, 146, 62);
+  color: rgb(8, 108, 138);
   transition: 0.5s;
   margin-left: 10px;
   font-size: 1.2rem;

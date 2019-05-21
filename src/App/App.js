@@ -3,10 +3,11 @@
 //Design in minimal - i spent too much time on trying to make logic best i could
 //Readme.md will be updated tommorow (1 day after deadline, because i have to go to work right now).
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import countries from '../countriesList';
 import CitySearchForm from '../components/CitySearchForm/CitySearchForm';
+import FancyBackground from '../components/FancyBackground/FancyBackground';
 import Modal from '../components/Modal/Modal';
 import CityOutput from '../components/CityOutput/CityOutput';
 import Backdrop from '../components/Backdrop/Backdrop';
@@ -21,8 +22,7 @@ class App extends Component {
         cities: [],
         modalError: '',
         serverError: '',
-        countries: [],
-        completed: false
+        countries: []
     }
 
     componentDidMount() {
@@ -33,24 +33,24 @@ class App extends Component {
                 })
             })
             .catch(err => {
-                this.setState({serverError: err.toString()})
+                this.setState({ serverError: err.toString() })
             })
     }
 
     getCities = (text) => {
-        this.setState({cities: [], serverError: '', modalError: ''});
+        this.setState({ cities: [], serverError: '', modalError: '' });
 
         const countryName = text.charAt(0).toUpperCase() + text.slice(1);
 
         const country = this.state.countries.find(el => el.name === countryName);
         if (!country || !text) {
-            this.setState({serverError: 'Wrong country provided...', completed: false});
+            this.setState({ serverError: 'Wrong country provided...' });
             return;
         }
 
         const allowedCountries = new RegExp(/spain|germany|poland|france/, 'i');
         if (!allowedCountries.test(countryName)) {
-            this.setState({modalError: 'This is demo version of our app. It only works for: Spain, Poland, Germany and France. Feel free to check most polluted cities in those countries', completed: false});
+            this.setState({ modalError: 'This is demo version of our app. It only works for: Spain, Poland, Germany and France. Feel free to check most polluted cities in those countries' });
             return;
         }
 
@@ -66,13 +66,12 @@ class App extends Component {
                     Promise.all(callsToWiki).then(result => {
                         this.setState({
                             cities: fetchedCities.map((el, i) => {
-                                    return {
-                                        ...el,
-                                        description: result[i] ? result[i] : 'No description on Wiki'
-                                    }
+                                return {
+                                    ...el,
+                                    description: result[i] ? result[i] : 'No description on Wiki'
                                 }
-                            ),
-                            completed: true
+                            }
+                            )
                         })
                     })
                 })
@@ -84,12 +83,16 @@ class App extends Component {
     }
 
     render() {
-        const { serverError, modalError, cities, completed } = this.state;
+        const { serverError, modalError, cities } = this.state;
         return (
             <div className="App">
-                <Header />
-                {modalError && <Modal modalText={modalError} click={this.modalCloseHandler}/>}
-                {modalError && <Backdrop click={this.modalCloseHandler}/>}
+                {modalError && <Modal modalText={modalError} click={this.modalCloseHandler} />}
+                {modalError && <Backdrop click={this.modalCloseHandler} />}
+                <FancyBackground>
+                    <Header />
+                    <h2>Pollution search</h2>
+                    <span><p>Type in country name and click 'Get cities' to check 10 most polluted cities in it</p></span>
+                </FancyBackground>
                 <div className="form-wrapper">
                     <CitySearchForm
                         serverError={serverError}
@@ -97,15 +100,17 @@ class App extends Component {
                         countries={countries}
                     />
                 </div>
+                {cities.length > 0 &&
                     <div className="output-wrapper">
-                    {completed && <h2>Results</h2>}
-                    {cities.map(({city, description}) => (
-                        <CityOutput
-                            key={city}
-                            city={city}
-                            description={description}/>
-                    ))}
+                        <h2>Results</h2>
+                        {cities.map(({ city, description }) => (
+                            <CityOutput
+                                key={city}
+                                city={city}
+                                description={description} />
+                        ))}
                     </div>
+                }
             </div>
         );
     }

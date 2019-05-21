@@ -25,15 +25,15 @@ class CityOutput extends Component {
       <div className="output-record">
         <div className="output-record__row-wrapper">
           <div className="output-record__city">
-              <b>City:</b> {city}
+            <b>City:</b> {city}
           </div>
           <div className="output-record__button">
             <button onClick={this.descriptionTogglerHandler}><FontAwesomeIcon icon="plus-square" /></button>
           </div>
         </div>
-          <div className={descriptionClasses}>{description}</div>
+        <div className={descriptionClasses}>{description}</div>
       </div>
-     
+
     )
   }
 };

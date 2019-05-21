@@ -1,3 +1,12 @@
+.errorMessage {
+  margin-top: 10px;
+  border: 1px solid red;
+  padding: 0.5rem;
+  background: rgb(250, 213, 213);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
 .errorMessage p {
   font-weight: bold;
   color: red;

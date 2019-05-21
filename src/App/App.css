@@ -3,7 +3,7 @@
 }
 
 .form-wrapper {
-  margin: 150px auto 0 auto;
+  margin: auto;
   width: 90vw;
 }
 
@@ -15,18 +15,9 @@
 }
 
 .output-wrapper h2 {
-  color: rgb(55, 146, 62);
+  color: rgb(83, 176, 137);
 }
 
 .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: rgb(83, 176, 137);
 }

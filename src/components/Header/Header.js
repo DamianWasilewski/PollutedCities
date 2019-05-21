@@ -4,7 +4,7 @@ import './Header.css'
 
 const header = () => (
   <div className="header">
-    <p><b>10 most polluted cities</b></p>
+    <h1><b>10 most polluted cities</b></h1>
   </div>
 );
 
