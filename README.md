@@ -85,8 +85,6 @@ To deploy project on gh-pages follow instructions from this link: https://pages.
 
 * **Damian Wasilewski** - *Initial work* - [DamianWasilewski](https://github.com/DamianWasilewski)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
