@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PollutedCities/static/css/main.e0ba38f9.chunk.css",
-    "main.js": "/PollutedCities/static/js/main.d1953f69.chunk.js",
-    "main.js.map": "/PollutedCities/static/js/main.d1953f69.chunk.js.map",
+    "main.css": "/PollutedCities/static/css/main.df183bed.chunk.css",
+    "main.js": "/PollutedCities/static/js/main.9852d716.chunk.js",
+    "main.js.map": "/PollutedCities/static/js/main.9852d716.chunk.js.map",
     "runtime~main.js": "/PollutedCities/static/js/runtime~main.8a01aab2.js",
     "runtime~main.js.map": "/PollutedCities/static/js/runtime~main.8a01aab2.js.map",
     "static/js/2.6871b8b3.chunk.js": "/PollutedCities/static/js/2.6871b8b3.chunk.js",
     "static/js/2.6871b8b3.chunk.js.map": "/PollutedCities/static/js/2.6871b8b3.chunk.js.map",
     "index.html": "/PollutedCities/index.html",
-    "precache-manifest.d03e203db2e56d148ea3f533249a0a81.js": "/PollutedCities/precache-manifest.d03e203db2e56d148ea3f533249a0a81.js",
+    "precache-manifest.f538c3d8c4a79a98eb61d6e8c9acd392.js": "/PollutedCities/precache-manifest.f538c3d8c4a79a98eb61d6e8c9acd392.js",
     "service-worker.js": "/PollutedCities/service-worker.js",
-    "static/css/main.e0ba38f9.chunk.css.map": "/PollutedCities/static/css/main.e0ba38f9.chunk.css.map"
+    "static/css/main.df183bed.chunk.css.map": "/PollutedCities/static/css/main.df183bed.chunk.css.map"
   }
 }

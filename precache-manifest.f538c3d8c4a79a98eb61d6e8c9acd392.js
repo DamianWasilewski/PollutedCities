@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1a0d7e0ad585180bc452f398dad25e00",
+    "revision": "d2df755a196a67960643c77a350fe48f",
     "url": "/PollutedCities/index.html"
   },
   {
-    "revision": "b90eb9ddfca497e5eb97",
-    "url": "/PollutedCities/static/css/main.e0ba38f9.chunk.css"
+    "revision": "03043492fc47f4bcdd66",
+    "url": "/PollutedCities/static/css/main.df183bed.chunk.css"
   },
   {
     "revision": "3c3384e77de220902e1b",
     "url": "/PollutedCities/static/js/2.6871b8b3.chunk.js"
   },
   {
-    "revision": "b90eb9ddfca497e5eb97",
-    "url": "/PollutedCities/static/js/main.d1953f69.chunk.js"
+    "revision": "03043492fc47f4bcdd66",
+    "url": "/PollutedCities/static/js/main.9852d716.chunk.js"
   },
   {
     "revision": "8d472c3fe33640e2f245",
