@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/PollutedCities/precache-manifest.f538c3d8c4a79a98eb61d6e8c9acd392.js"
+  "/PollutedCities/precache-manifest.23797eec99212b166e74a7067fc27222.js"
 );
 
 self.addEventListener('message', (event) => {
