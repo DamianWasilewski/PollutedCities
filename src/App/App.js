@@ -37,19 +37,16 @@ class App extends Component {
             })
     }
 
-    getCities = (e) => {
-        e.preventDefault();
+    getCities = (text) => {
         this.setState({cities: [], serverError: '', modalError: ''});
 
-        const countryName = e.target.elements.country.value.charAt(0).toUpperCase() + e.target.elements.country.value.slice(1);
+        const countryName = text.charAt(0).toUpperCase() + text.slice(1);
 
         const country = this.state.countries.find(el => el.name === countryName);
-        if (!country) {
-            this.setState({serverError: 'Wrong country provided...'});
+        if (!country || !text) {
+            this.setState({serverError: 'Wrong country provided...', completed: false});
             return;
         }
-
-        console.log(country)
 
         const allowedCountries = new RegExp(/spain|germany|poland|france/, 'i');
         if (!allowedCountries.test(countryName)) {

@@ -40,10 +40,12 @@
   outline: none;
 }
 
-.form input[type="submit"] {
+.form button {
+  margin: auto;
   width: 125px;
   padding: 5px;
   border-radius: 10px;
+  border: none;
   cursor: pointer;
   margin-top: 15px;
   background-color: rgb(27, 115, 174);
@@ -52,7 +54,7 @@
   transition: 0.75s;
 }
 
-.form input[type="submit"]:hover {
+.form button:hover {
   background-color: rgb(8, 108, 138);
   transition: 0.75s;
 }
@@ -68,6 +70,10 @@
   right: 0;
 }
 
+.form ul > .selected {
+  background-color: rgb(128, 128, 128);
+}
+
 .form ul::before {
   content: '';
 }
@@ -77,8 +83,4 @@
   cursor: pointer;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(212, 212, 212);
-}
-
-.form li:hover {
-  background-color: rgb(128, 128, 128);
 }

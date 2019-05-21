@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   background: rgb(41, 126, 182);
+  z-index: 1000;
 }
 
 .header p {
